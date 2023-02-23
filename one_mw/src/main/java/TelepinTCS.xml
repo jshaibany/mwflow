@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    
+     <bean id="TCSCredentialsConnector" class="com.example.one_mw.service.integrated.TCSCredentialsConnector">
+        <property name="url" value="http://10.200.1.49:6060/telepin"/>
+        <property name="userName" value="jalaladmin"/>
+        <property name="password" value="S_zxcasd123"/>
+    </bean>
+    <bean id="MWServiceRequestConnector" class="com.example.one_mw.service.integrated.MWServiceRequestConnector">
+        <property name="url" value="http://localhost:8080/one_mw/v1/getPendingRequests"/>
+        <property name="userName" value="APIUser"/>
+        <property name="password" value="123"/>
+    </bean>
+    <bean id="MWServiceRequestAuthorizationConnector" class="com.example.one_mw.service.integrated.MWServiceRequestAuthorizationConnector">
+        <property name="url" value="http://localhost:8080/one_mw/v1/authorizeRequest"/>
+        <property name="userName" value="APIUser"/>
+        <property name="password" value="basnbyvxgxbkkkfjuhcvgdbasnbyvxgx"/>
+    </bean>
+    <bean id="MWServiceRequestCheckerAuthorizationConnector" class="com.example.one_mw.service.integrated.MWServiceRequestCheckerAuthorizationConnector">
+        <property name="url" value="http://localhost:8080/one_mw/v1/authorizeRequestChecker"/>
+        <property name="userName" value="APIUser"/>
+        <property name="password" value="kkkfjuhcvgdbasnbyvxgxbvbxnmcyufgea"/>
+    </bean>
+    <bean id="MWServiceBulkRequestCheckerAuthorizationConnector" class="com.example.one_mw.service.integrated.MWServiceBulkRequestCheckerAuthorizationConnector">
+        <property name="url" value="http://localhost:8080/one_mw/v1/authorizeBulkRequestChecker"/>
+        <property name="userName" value="APIUser"/>
+        <property name="password" value="kkkfjuhcvgdbasnbyvxgxbvbxnmcyufgea"/>
+    </bean>
+    <bean id="MWServiceRequestForApprovalConnector" class="com.example.one_mw.service.integrated.MWServiceRequestForApprovalConnector">
+        <property name="url" value="http://localhost:8080/one_mw/v1/submitRequestForApproval"/>
+        <property name="userName" value="APIUser"/>
+        <property name="password" value="basnbyvxgxbkkkfjuhcvgdbasnbyvxgx"/>
+    </bean>
+    <bean id="MWServiceBulkRequestForApprovalConnector" class="com.example.one_mw.service.integrated.MWServiceBulkRequestForApprovalConnector">
+        <property name="url" value="http://localhost:8080/one_mw/v1/submitBulkRequestForApproval"/>
+        <property name="userName" value="APIUser"/>
+        <property name="password" value="basnbyvxgxbkkkfjuhcvgdbasnbyvxgx"/>
+    </bean>
+    <bean id="MWApproveRequestConnector" class="com.example.one_mw.service.integrated.MWApproveRequestConnector">
+        <property name="url" value="http://localhost:8080/one_mw/v1/approveRequest"/>
+        <property name="userName" value="APIUser"/>
+        <property name="password" value="basnbyvxgxbkkkfjuhcvgdbasnbyvxgx"/>
+    </bean>
+    <bean id="MWApproveBulkRequestConnector" class="com.example.one_mw.service.integrated.MWApproveBulkRequestConnector">
+        <property name="url" value="http://localhost:8080/one_mw/v1/approveBulkRequest"/>
+        <property name="userName" value="APIUser"/>
+        <property name="password" value="basnbyvxgxbkkkfjuhcvgdbasnbyvxgx"/>
+    </bean>
+    <bean id="tCSDirectXMLObjRequest" class="com.example.one_mw.service.integrated.TCSDirectXMLObjRequest">
+        
+    </bean>
+    <bean id="tCSProxyXMLObjRequest" class="com.example.one_mw.service.integrated.TCSProxyXMLObjRequest">
+        
+    </bean>
+     <bean id="mWProxyJSONRequest" class="com.example.one_mw.service.integrated.MWProxyJSONRequest">
+        
+    </bean>
+    <bean id="restfullIntegratedServicesObjRunTime" class="com.example.one_mw.service.runtime.RestfullIntegratedServicesObjRunTime">
+        
+    </bean>
+    <bean id="mWRestfullEndPointsRunTime" class="com.example.one_mw.service.runtime.MWRestfullEndPointsRunTime">
+        
+    </bean>
+    
+</beans>

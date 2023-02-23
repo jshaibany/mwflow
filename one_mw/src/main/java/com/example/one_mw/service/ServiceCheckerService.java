@@ -1,0 +1,29 @@
+package com.example.one_mw.service;
+
+import java.sql.SQLException;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.example.one_mw.entity.ServiceChecker;
+import com.example.one_mw.repository.ServiceCheckerRepository;
+
+@Service
+public class ServiceCheckerService {
+
+	@Autowired
+	private ServiceCheckerRepository serviceCheckerRepository;
+	
+	@Transactional(rollbackFor = { SQLException.class })
+	public void createServiceChecker(ServiceChecker entity) {
+		
+		serviceCheckerRepository.save(entity);
+	}
+	
+	public Optional<ServiceChecker> getAllServiceCheckers(Integer id){
+		
+		return Optional.ofNullable(serviceCheckerRepository.findByServiceId(id));
+	}
+}
